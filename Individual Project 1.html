@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Best Practices</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f3f4f6;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    header, footer {
+      background-color: #1f2937;
+      color: white;
+      padding: 1em 2em;
+      text-align: center;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 2em auto;
+      background: white;
+      padding: 2em;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    h1, h2 {
+      color: #1f2937;
+    }
+
+    ul#practices-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul#practices-list li {
+      margin-bottom: 1.5em;
+      padding: 1em;
+      border-left: 5px solid #3b82f6;
+      background: #f9fafb;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    ul#practices-list li:hover {
+      background: #eef2ff;
+    }
+
+    label {
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+    }
+
+    .description {
+      margin: 0.5em 0 0 1.5em;
+      color: #555;
+      font-size: 0.95em;
+    }
+
+    #summary {
+      margin-top: 2em;
+      padding: 1em;
+      background: #e0f2fe;
+      border: 1px solid #0284c7;
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    #reward {
+      margin-top: 2em;
+      text-align: center;
+    }
+
+    #reward img {
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Web Development Best Practices</h1>
+    <p>Select the best practices that your website follows. Your progress will be saved automatically.</p>
+  </header>
+
+  <main>
+    <section id="practices">
+      <ul id="practices-list">
+        <!-- 15 Best Practices -->
+        <li>
+          <label><input type="checkbox" class="practice-checkbox" data-id="semantic-html"> Use semantic HTML for structure and accessibility.</label>
+          <p class="description">Using tags like <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, and <code>&lt;footer&gt;</code> improves readability and screen reader access.</p>
+        </li>
+        <li>
+          <label><input type="checkbox" class="practice-checkbox" data-id="responsive-design"> Design for responsive layouts.</label>
+          <p class="description">Ensure your website works on mobile, tablet, and desktop using relative units and media queries.</p>
+        </li>
+        <li>
+          <label><input type="checkbox" class="practice-checkbox" data-id="alt-text"> Include meaningful alt text for images.</label>
+          <p class="description">Alt text helps users with screen readers understand your content and improves SEO.</p>
+        </li>
+        <li>
+          <label><input type="checkbox" class="practice-checkbox" data-id="external-css"> Separate CSS from HTML.</label>
+          <p class="description">Use external stylesheets for clean structure and reusability.</p>
+        </li>
+        <li>
+          <label><input type="checkbox" class="practice-checkbox" data-id="minified-files"> Minify CSS and JS files before deployment.</label>
+          <p class="description">Improves performance by reducing file size.</p>
+        </li>
+        <li>
+          <label><input type="checkbox" class="practice-checkbox" data-id="localstorage"> Use Local Storage to save preferences.</label>
+          <p class="description">Allows data persistence without a backend.</p>
+        </li>
+        <li>
+          <label><input type="checkbox" class="practice-checkbox" data-id="accessible-forms"> Make forms accessible.</label>
+          <p class="description">Label your form elements correctly to support assistive technology.</p>
+        </li>
+        <li>
+          <label><input type="checkbox" class="practice-checkbox" data-id="keyboard-nav"> Support keyboard navigation.</label>
+          <p class="description">Ensure interactive elements are reachable and usable by keyboard alone.</p>
+        </li>
+        <li>
+          <label><input type="checkbox" class="practice-checkbox" data-id="aria-labels"> Use ARIA labels where appropriate.</label>
+          <p class="description">Enhances screen reader capabilities for custom components.</p>
+        </li>
+        <li>
+          <label><input type="checkbox" class="practice-checkbox" data-id="performance"> Optimize images and assets for performance.</label>
+          <p class="description">Use appropriate file formats and compression to reduce load time.</p>
+        </li>
+        <li>
+          <label><input type="checkbox" class="practice-checkbox" data-id="code-comments"> Use clear, concise comments.</label>
+          <p class="description">Helps maintainability and team collaboration.</p>
+        </li>
+        <li>
+          <label><input type="checkbox" class="practice-checkbox" data-id="form-validation"> Validate user input on client-side.</label>
+          <p class="description">Improves user experience and reduces backend errors.</p>
+        </li>
+        <li>
+          <label><input type="checkbox" class="practice-checkbox" data-id="https"> Use HTTPS for security.</label>
+          <p class="description">Encrypts data between client and server.</p>
+        </li>
+        <li>
+          <label><input type="checkbox" class="practice-checkbox" data-id="js-modularity"> Organize JavaScript into modules.</label>
+          <p class="description">Improves code reusability and maintainability.</p>
+        </li>
+        <li>
+          <label><input type="checkbox" class="practice-checkbox" data-id="lazy-loading"> Implement lazy loading for images.</label>
+          <p class="description">Improves page load speed by only loading images as they appear in the viewport.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="summary"></section>
+    <section id="reward"></section>
+  </main>
+
+  <footer>
+    <p>Created for CITS5505 Assignment 1</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const checkboxes = document.querySelectorAll(".practice-checkbox");
+      const summaryDiv = document.getElementById("summary");
+      const rewardDiv = document.getElementById("reward");
+      const successThreshold = 12;
+
+      checkboxes.forEach(cb => {
+        const id = cb.dataset.id;
+        cb.checked = localStorage.getItem(id) === "true";
+        cb.addEventListener("change", () => {
+          localStorage.setItem(id, cb.checked);
+          updateSummary();
+        });
+      });
+
+      function updateSummary() {
+        const total = checkboxes.length;
+        const checked = Array.from(checkboxes).filter(cb => cb.checked).length;
+        summaryDiv.innerHTML = `
+          <h2>Summary</h2>
+          <p>You have selected <strong>${checked}</strong> out of <strong>${total}</strong> best practices.</p>
+        `;
+
+        if (checked >= successThreshold) {
+          displayReward();
+        } else {
+            rewardDiv.innerHTML = "";
+        }
+      }
+
+      function displayReward() {
+        const imageUrl = "TASK.jpg"; // 或者 "images/reward.jpg" 视你存放位置而定
+        rewardDiv.innerHTML = `
+            <h2>🎉 Congratulations!</h2>
+            <p>You’ve met the success criteria! Enjoy this cute reward image:</p>
+            <img src="${imageUrl}" alt="Reward image" width="300">
+            `;
+        }
+
+
+      updateSummary();
+    });
+  </script>
+</body>
+</html>
