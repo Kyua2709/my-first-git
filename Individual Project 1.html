@@ -65,13 +65,18 @@
     }
 
     #summary {
-      margin-top: 2em;
-      padding: 1em;
+      position: fixed;
+      bottom: 20em;
+      right: 1em;
+      width: 250px;
       background: #e0f2fe;
-      border: 1px solid #0284c7;
+      border: 1px solid #e0f2fe;
       border-radius: 6px;
+      padding: 1em;
       text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
+
 
     #reward {
       margin-top: 2em;
@@ -208,13 +213,13 @@
       }
 
       function displayReward() {
-        fetch("https://random.dog/woof.json")
+        fetch("https://api.thecatapi.com/v1/images/search")
           .then(response => response.json())
           .then(data => {
-            const imageUrl = data.url;
+            const imageUrl = data[0].url;
             rewardDiv.innerHTML = `
               <h2>🎉 Congratulations!</h2>
-              <p>You’ve met the success criteria! Enjoy this cute dog image:</p>
+              <p>You’ve met the success criteria! Enjoy this cute cat image:</p>
               <img src="${imageUrl}" alt="Cute dog reward" width="300">
             `;
           })
