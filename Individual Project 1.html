@@ -208,13 +208,24 @@
       }
 
       function displayReward() {
-        const imageUrl = "TASK.jpg"; // 或者 "images/reward.jpg" 视你存放位置而定
-        rewardDiv.innerHTML = `
-            <h2>🎉 Congratulations!</h2>
-            <p>You’ve met the success criteria! Enjoy this cute reward image:</p>
-            <img src="${imageUrl}" alt="Reward image" width="300">
+        fetch("https://random.dog/woof.json")
+          .then(response => response.json())
+          .then(data => {
+            const imageUrl = data.url;
+            rewardDiv.innerHTML = `
+              <h2>🎉 Congratulations!</h2>
+              <p>You’ve met the success criteria! Enjoy this cute dog image:</p>
+              <img src="${imageUrl}" alt="Cute dog reward" width="300">
             `;
-        }
+          })
+          .catch(error => {
+            rewardDiv.innerHTML = `
+              <p>🎉 You’ve met the success criteria! But we couldn’t load your reward image. Try again later.</p>
+            `;
+            console.error("Error fetching reward image:", error);
+          });
+      }
+
 
 
       updateSummary();
