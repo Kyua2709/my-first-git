@@ -77,6 +77,19 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
+    .progress-bar-container {
+      margin-top: 1em;
+      background: #f3f4f6;
+      border-radius: 5px;
+      overflow: hidden;
+      height: 10px;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: #3b82f6;
+      transition: width 0.3s;
+    }
 
     #reward {
       margin-top: 2em;
@@ -200,15 +213,21 @@
       function updateSummary() {
         const total = checkboxes.length;
         const checked = Array.from(checkboxes).filter(cb => cb.checked).length;
+        const progressPercentage = (checked / total) * 100;
+
         summaryDiv.innerHTML = `
           <h2>Summary</h2>
           <p>You have selected <strong>${checked}</strong> out of <strong>${total}</strong> best practices.</p>
+          <div class="progress-bar-container">
+            <div class="progress-bar" style="width: ${progressPercentage}%; background-color: ${checked >= successThreshold ? '#22c55e' : '#3b82f6'};"></div>
+          </div>
+          ${checked >= successThreshold ? '<p style="color: #22c55e; font-weight: bold;">Well Done!</p>' : ''}
         `;
 
         if (checked >= successThreshold) {
           displayReward();
         } else {
-            rewardDiv.innerHTML = "";
+          rewardDiv.innerHTML = "";
         }
       }
 
@@ -230,8 +249,6 @@
             console.error("Error fetching reward image:", error);
           });
       }
-
-
 
       updateSummary();
     });
