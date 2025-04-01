@@ -5,41 +5,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kexing Yuan - CV</title>
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f8fafc;
+    html, body {
+      height: 100%;
       margin: 0;
       padding: 0;
+    }
+
+    #vanta-bg {
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: transparent; 
       color: #1f2937;
     }
+
     header, footer {
       background-color: #1f2937;
       color: white;
       text-align: center;
       padding: 10px;
     }
+
     header img {
       width: 100px;
       border-radius: 75%;
       margin-bottom: 0.5em;
       box-shadow: 0 0 5px rgba(0,0,0,0.2);
     }
+
     main {
       max-width: 900px;
       margin: auto;
       padding: 2em;
+      background-color: transparent; 
+      border-radius: 10px; 
     }
+
     section {
       margin-bottom: 3em;
-    
     }
+
     h1 {
       color: #111827;
       border-bottom: 2px solid #1f2937;
       padding-bottom: 0.2em;
     }
+
     ul {
       padding-left: 1.2em;
+    }
+
+    .highlight {
+      font-weight: bold;
     }
 
     .toggle-btn {
@@ -51,24 +75,32 @@
       cursor: pointer;
       margin-top: 0.5em;
     }
+
+    .details {
+      display: none;
+      margin-top: 1em;
+    }
   </style>
 </head>
 
 <body>
+  <div id="vanta-bg"></div> 
+
   <header>
     <img src="Resume_Photo.jpg" alt="Profile Picture">
     <p style="font-size: 30px;">Kexing Yuan</p>
     <p>+61 411085666 | yuanfushuai@gmail.com | Perth | Born: Oct 1997 | Male</p>
   </header>
+
   <main>
     <section>
       <h1>Education</h1>
-      <p><strong>University of Sydney</strong> — Master of Business Analysis & Marketing (2020 - 2023)<br>
+      <p><strong>University of Sydney</strong> — Master of Business Analysis & Marketing (2020 - 2022)<br>
       GPA: 3.46 / 4.00</p>
       <ul>
         <li>Major Courses: Marketing principles, decision-making psychology, data processing, new product development, customer behavior, business statistics, customer analysis, and corporate operations.</li>
       </ul>
-      <p><strong>University of Newcastle</strong> — Bachelor of Sports Management<br>
+      <p><strong>University of Newcastle</strong> — Bachelor of Sports Management (2016 - 2020)<br>
       GPA: 3.6 / 4.00</p>
       <ul>
         <li>Major Courses: Urban entertainment, project planning, sports operations, brand and customer management, volunteer coordination.</li>
@@ -97,37 +129,32 @@
         <li>Conduct regular inventory audits to maintain accurate stock records</li>
         <li>Assist customers in locating specific products on the shelves</li>
       </ol>
-
     </section>
 
     <section>
-        <h1>Project Experience</h1>
+      <h1>Project Experience</h1>
+      <p><strong>1. Shanghai Dimo Mushroom Urban Agriculture Development Program</strong> — Program Manager (Feb 2022 – Jan 2023)</p>
+      <button class="toggle-btn" onclick="toggleDetails(this)">Show/Hide Project Details</button>
+      <div style="display: none;">
+        <ul>
+          <li><strong>Project overview:</strong> Fresh green vegetables and edible fungi are planted underground under the bomb shelter in downtown District, Shanghai. For customer groups are high-end communities and high-end restaurants around the planting base, these customer groups have very high requirements for the freshness of vegetables. The total investment of the project is 100,000 RMB.</li>
+          <li><strong>Responsible for projects:</strong> Investigate the customer groups around the planting base. Investigate and compare the origin of vegetables and edible fungi. Observation and recording of the growth of different edible fungi and various vegetables in underground environments. Responsible for directing the planting and modification of the basement of the engineering site.</li>
+          <li><strong>Achievement:</strong> Main achievements: successfully planted high-quality edible fungi in the underground environment, and recorded growth record data and output of different edible fungi in different environments.</li>
+        </ul>
+      </div>
       
-        <p><strong>1. Shanghai Dimo Mushroom Urban Agriculture Development Program</strong> — Program Manager (Feb 2022 – Jan 2023)</p>
-        <button class="toggle-btn" onclick="toggleDetails(this)">Show/Hide Project Details</button>
-        <div style="display: none;">
-          <ul>
-            <li><strong>Project overview:</strong> Fresh green vegetables and edible fungi are planted underground under the bomb shelter in downtown District, Shanghai. For customer groups are high-end communities and high-end restaurants around the planting base, these customer groups have very high requirements for the freshness of vegetables. The total investment of the project is 10 million RMB.</li>
-            <li><strong>Responsible for projects:</strong> Investigate the customer groups around the planting base. Investigate and compare the origin of vegetables and edible fungi. Observation and recording of the growth of different edible fungi and various vegetables in underground environments. Responsible for directing the planting and modification of the basement of the engineering site.</li>
-            <li><strong>Achievement:</strong> Main achievements: successfully planted high-quality edible fungi in the underground environment, and recorded growth record data and output of different edible fungi in different environments.</li>
-          </ul>
-        </div>
-      
-        <p><strong>2. Shelf organizer at Jiuguang Supermarket Store</strong> — Program Manager (June 2016 – Nov 2018)</p>
-        <button class="toggle-btn" onclick="toggleDetails(this)">Show/Hide Project Details</button>
-        <div style="display: none;">
-          <ul>
-            <li><strong>Stock Management:</strong> Regularly check inventory levels to ensure shelves are fully stocked. Coordinate with the warehouse or suppliers to reorder products as needed. Monitor product expiration dates and remove expired or damaged items.</li>
-            <li><strong>Product Display:</strong> Arrange products attractively on shelves to enhance visibility and accessibility. Implement visual merchandising strategies to promote specific products. Ensure products are correctly labeled with prices, descriptions, and other relevant details.</li>
-            <li><strong>Inventory Control:</strong> Conduct regular inventory audits to maintain accurate stock records. Track incoming and outgoing inventory, recording discrepancies if any. Utilize inventory management software to update stock levels.</li>
-            <li><strong>Quality Assurance:</strong> Inspect product quality and packaging to ensure they meet store standards. Handle customer complaints about product quality or availability.</li>
-            <li><strong>Customer Assistance:</strong> Assist customers in locating specific products on the shelves. Provide information on promotions or product details as needed. Manage and resolve customer inquiries related to stock availability.</li>
-          </ul>
-        </div>
-      </section>
-      
-
-      
+      <p><strong>2. Shelf organizer at Jiuguang Supermarket Store</strong> — Program Manager (June 2016 – Nov 2018)</p>
+      <button class="toggle-btn" onclick="toggleDetails(this)">Show/Hide Project Details</button>
+      <div style="display: none;">
+        <ul>
+          <li><strong>Stock Management:</strong> Regularly check inventory levels to ensure shelves are fully stocked. Coordinate with the warehouse or suppliers to reorder products as needed. Monitor product expiration dates and remove expired or damaged items.</li>
+          <li><strong>Product Display:</strong> Arrange products attractively on shelves to enhance visibility and accessibility. Implement visual merchandising strategies to promote specific products. Ensure products are correctly labeled with prices, descriptions, and other relevant details.</li>
+          <li><strong>Inventory Control:</strong> Conduct regular inventory audits to maintain accurate stock records. Track incoming and outgoing inventory, recording discrepancies if any. Utilize inventory management software to update stock levels.</li>
+          <li><strong>Quality Assurance:</strong> Inspect product quality and packaging to ensure they meet store standards. Handle customer complaints about product quality or availability.</li>
+          <li><strong>Customer Assistance:</strong> Assist customers in locating specific products on the shelves. Provide information on promotions or product details as needed. Manage and resolve customer inquiries related to stock availability.</li>
+        </ul>
+      </div>
+    </section>
 
     <section>
       <h1>Skills & Interests</h1>
@@ -136,16 +163,25 @@
       <p><strong>Interests:</strong> Outdoor activities</p>
     </section>
 
-
     <section>
-      <h1>References Used</h1>
-      <p>UWA Referencing Guide: <a href="https://guides.library.uwa.edu.au/referencing/uwa" target="_blank">https://guides.library.uwa.edu.au/referencing/uwa</a></p>
+        <h1>References Used</h1>
+        <ul>
+          <li>HTML5 UP Templates. (n.d.). Retrieved from <a href="https://html5up.net/" target="_blank">https://html5up.net/</a></li>
+          <li>PaulBradish. (2022). <i>html5up-vantajs</i> [GitHub Repository]. GitHub. Retrieved from <a href="https://github.com/paulbradish/html5up-vantajs" target="_blank">https://github.com/paulbradish/html5up-vantajs</a></li>
+          <li>Vanta.js: Animated Backgrounds for Your Website. (n.d.). Retrieved from <a href="https://www.vantajs.com/" target="_blank">https://www.vantajs.com/</a></li>
+          <li>Three.js — JavaScript 3D Library. (n.d.). Retrieved from <a href="https://threejs.org/" target="_blank">https://threejs.org/</a></li>
+          <li>OpenAI ChatGPT. (2025). AI-assisted web design explanation and HTML integration support for university assignment. Retrieved from <a href="https://chat.openai.com/" target="_blank">https://chat.openai.com/</a></li>
+          <li>W3Schools. (n.d.). Retrieved from <a href="https://www.w3schools.com/" target="_blank">https://www.w3schools.com/</a></li>
+          <li><li>GitHub Copilot. (2025). AI-powered coding assistant used via Visual Studio Code for HTML and CSS development. Retrieved from <a href="https://github.com/features/copilot" target="_blank">https://github.com/features/copilot</a></li></li>
+        </ul>
     </section>
+      
+    
   </main>
-  <footer>
-    <p>Created for CITS5505 Assignment 2</p>
-  </footer>
 
+  <footer>
+    <p>CITS5505 Individual Assignment 2</p>
+  </footer>
 
   <script>
     function toggleDetails(button) {
@@ -156,6 +192,24 @@
         details.style.display = 'none';
       }
     }
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+
+  <script>
+    VANTA.NET({
+      el: "#vanta-bg",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      color: 0x2563eb, 
+      backgroundColor: 0xf8fafc 
+    });
   </script>
 </body>
 </html>
